@@ -1,11 +1,14 @@
-import { Image, StyleSheet, Platform } from 'react-native';
+import { Image, StyleSheet, Platform, Pressable } from 'react-native';
 import { Alert, Button, View } from 'react-native';
 import { HelloWave } from '@/components/HelloWave';
 import ParallaxScrollView from '@/components/ParallaxScrollView';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
+import React from 'react';
+import { useRouter } from 'expo-router';
 
 export default function HomeScreen() {
+  const router = useRouter();
   return (
     <ParallaxScrollView
       headerBackgroundColor={{ light: '#1D3D47', dark: '#1D3D47' }}
@@ -18,15 +21,24 @@ export default function HomeScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Bem vindo, Antony!</ThemedText>
         <HelloWave />
-      </ThemedView>
+      </ThemedView> Saldo: 00,00 R$
       <ThemedView style={styles.stepContainer}>
-        <ThemedText style={styles.button}  type="subtitle"></ThemedText><Button color= "#2843a1"
-          onPress={() => {
-            console.log('Transfers');
-          }}
-        
-          title="Pix"
-        />
+        <ThemedText type="subtitle">
+          <Pressable
+            onPress={() => { router.push('/explore'); 
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584", // Cor de fundo similar ao Button padrão
+              padding: 6,
+              borderRadius: 10, // Altere esse valor para ajustar o arredondamento
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 80,
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Pix</ThemedText>
+          </Pressable></ThemedText>
         <ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>
 
@@ -39,14 +51,49 @@ export default function HomeScreen() {
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Transferência</ThemedText>
+        <ThemedText type="subtitle">Transferências</ThemedText>
         <ThemedText>
 
         </ThemedText>
       </ThemedView>
       <ThemedView style={styles.stepContainer}>
-        <ThemedText type="subtitle">Meus cartôes</ThemedText>
+        <ThemedText type="subtitle">
+          <Pressable
+            onPress={() => {
+             router.push('/explore');
+
+              console.log('You tapped the button!');
+            }}
+            style={{
+              backgroundColor: "#841584", // Cor de fundo similar ao Button padrão
+              padding: 6,
+              borderRadius: 10, // Altere esse valor para ajustar o arredondamento
+              alignItems: 'center',
+              justifyContent: 'center',
+              width: 80,
+            }}
+          >
+            <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Extrato</ThemedText>
+          </Pressable></ThemedText>
         <ThemedText>
+          <ThemedText type="subtitle">
+            <Pressable
+              onPress={() => {
+                console.log('You tapped the button!');
+              }}
+              style={{
+                backgroundColor: "#841584", // Cor de fundo similar ao Button padrão
+                padding: 6,
+                borderRadius: 10, // Altere esse valor para ajustar o arredondamento
+                alignItems: 'center',
+                justifyContent: 'center',
+                width: 120,
+                height : 38
+                
+              }}
+            >
+              <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Comprovantes</ThemedText>
+            </Pressable></ThemedText>
 
           <ThemedText type="defaultSemiBold"></ThemedText>
           <ThemedText type="defaultSemiBold"></ThemedText>
@@ -62,11 +109,11 @@ const styles = StyleSheet.create({
   titleContainer: {
     flexDirection: 'row',
     alignItems: 'center',
-    gap: 8,
+    gap: 1,
   },
   stepContainer: {
-    gap: 8,
-    marginBottom: 8,
+    gap: 0,
+    marginBottom: 6,
   },
   reactLogo: {
     height: '100%',
@@ -76,17 +123,10 @@ const styles = StyleSheet.create({
     position: 'absolute',
   },
   button: {
-    marginBottom: 30,
-    width: 270,
+    marginBottom: 1,
+    width: 300,
     alignItems: 'center',
-    backgroundColor: '#2196F3',
+    backgroundColor: '#ffff',
   }
- 
-
-
-
-
-
-
 
 });

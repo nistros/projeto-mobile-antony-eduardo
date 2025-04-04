@@ -4,7 +4,7 @@ import { Platform } from 'react-native';
 import MaterialIcons from '@expo/vector-icons/MaterialIcons';
 import MaterialCommunityIcons from '@expo/vector-icons/MaterialCommunityIcons';
 import { HapticTab } from '@/components/HapticTab';
-import { IconSymbol } from '@/components/ui/IconSymbol';  
+import { IconSymbol } from '@/components/ui/IconSymbol';
 import Ionicons from '@expo/vector-icons/Ionicons';
 import TabBarBackground from '@/components/ui/TabBarBackground';
 import { Colors } from '@/constants/Colors';
@@ -31,7 +31,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Conta Bancária',  
+          title: 'Conta Bancária',
           tabBarIcon: ({ color }) => <Ionicons name="wallet" size={24} color="black" />,
         }}
       />
@@ -39,7 +39,7 @@ export default function TabLayout() {
         name="explore"
         options={{
           title: 'Área do pix',
-          tabBarIcon: ({ color }) => <MaterialIcons name="pix" size={24} color="green" c />,
+          tabBarIcon: ({ color }) => <MaterialIcons name="pix" size={24} color="green" />,
         }}
       />
     </Tabs>
