@@ -21,7 +21,7 @@ export default function HomeScreen() {
       <ThemedView style={styles.titleContainer}>
         <ThemedText type="title">Bem vindo, Antony!</ThemedText>
         <HelloWave />
-      </ThemedView> Saldo: 00,00 R$
+      </ThemedView> Saldo: **** R$
       <ThemedView style={styles.stepContainer}>
         <ThemedText type="subtitle">
           <Pressable
@@ -71,9 +71,16 @@ export default function HomeScreen() {
               alignItems: 'center',
               justifyContent: 'center',
               width: 80,
+              height: 40
             }}
           >
             <ThemedText style={{ color: 'white', fontWeight: 'bold' }}>Extrato</ThemedText>
+          
+          <ThemedText></ThemedText>
+          
+          
+          
+          
           </Pressable></ThemedText>
         <ThemedText>
           <ThemedText type="subtitle">
@@ -88,7 +95,8 @@ export default function HomeScreen() {
                 alignItems: 'center',
                 justifyContent: 'center',
                 width: 120,
-                height : 38
+                height : 40,
+                marginTop: 20
                 
               }}
             >
