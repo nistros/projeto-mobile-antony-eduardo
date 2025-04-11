@@ -86,6 +86,7 @@ export default function HomeScreen() {
           <ThemedText type="subtitle">
             <Pressable
               onPress={() => {
+                router.push('/explore');
                 console.log('You tapped the button!');
               }}
               style={{
